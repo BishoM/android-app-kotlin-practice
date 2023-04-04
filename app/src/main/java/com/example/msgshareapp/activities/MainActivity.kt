@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.msgshareapp.R
+import com.example.msgshareapp.showToast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,26 +21,26 @@ class MainActivity : AppCompatActivity() {
         val btnRecycleView = findViewById<Button>(R.id.btnRecycleView)
 
         btnShowToast.setOnClickListener {
-            Toast.makeText(this, "Button was clicked!", Toast.LENGTH_SHORT).show()
+            showToast("Button was clicked!")
         }
 
-        sendToNext.setOnClickListener{
+        sendToNext.setOnClickListener {
             val message: String = userMessage.text.toString()
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
-             val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("user_message", message)
             startActivity(intent)
         }
 
-        btnShare.setOnClickListener{
+        btnShare.setOnClickListener {
             val message: String = userMessage.text.toString()
             val intent = Intent()
             intent.action = Intent.ACTION_SEND
             intent.putExtra(Intent.EXTRA_TEXT, message)
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, "Share to: "))
-         }
+        }
 
         btnRecycleView.setOnClickListener {
             val intent = Intent(this, HobbiesActivity::class.java)

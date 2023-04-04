@@ -5,6 +5,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.msgshareapp.R
+import com.example.msgshareapp.showToast
 
 
 class SecondActivity : AppCompatActivity() {
@@ -15,7 +16,9 @@ class SecondActivity : AppCompatActivity() {
         val txtUserMessage = findViewById<TextView>(R.id.txtUserMessage)
         val bundle: Bundle? = intent.extras
         val msg = bundle!!.getString("user_message")
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        if (msg != null) {
+            showToast(msg)
+        }
 
         txtUserMessage.text = msg
     }
