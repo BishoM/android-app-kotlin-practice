@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val btnRecycleView = findViewById<Button>(R.id.btnRecycleView)
 
         btnShowToast.setOnClickListener {
-            showToast("Button was clicked!", Toast.LENGTH_LONG)
+            showToast(resources.getString(R.string.button_was_clicked), Toast.LENGTH_LONG)
         }
 
         sendToNext.setOnClickListener {
