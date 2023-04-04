@@ -1,9 +1,10 @@
-package com.example.msgshareapp
+package com.example.msgshareapp.activities
 
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.msgshareapp.R
 
 
 class SecondActivity : AppCompatActivity() {
